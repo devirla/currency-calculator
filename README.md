@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Currency exchange calculator
+A simple currency exchange calculator using
+public Web API from the National Bank of Poland 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Project Stauts](#project-status)
+* [Development Plan](#development-plan)
+* [Licence](#licence)
 
-## Available Scripts
+## General info
+This project was created to practice working with Web API and present basic programming skills in ReactJS. It is using public Web API from the National Bank of Poland. The calculator calculates currency exchange depends on one of the option: 
 
-In the project directory, you can run:
+-> ask ("have") - User put amount of money he/she has in choosen currency and choose currency which he/she is interested for. In response the user recieves amount of money which he/she can get.
 
-### `npm start`
+-> bid ("want") - User put amount of money he/she want to have in choosen currency and choose currency from which it will be calculated. In response the user recieves how much money he/she have to have. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies
+Project is created with:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* HTML5
+* CSS3
+* Javascript
+* ReactJS ES6
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ To run this project in your device, download the repository and open terminal in your editor and run command…
 
-### `npm run build`
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ Or you can directly visit
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Status
+The project is still under development. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Development Plans
 
-### `npm run eject`
+UX or coding changes:
+* add swap button 
+* change local state to hooks state 
+* code refactoring
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+New functionalities:
+* add charts showing historical changes of the exchange
+* adding comparision of the market and the NBP exchange rate 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licence
+This project is licensed under the terms of the MIT license.

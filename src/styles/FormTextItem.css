@@ -1,0 +1,24 @@
+.input-section {
+    position: relative;
+    width: 70%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.7rem;
+    background-color: #242424;
+}
+
+.input-label {
+    width: 100%;
+    color: #F6F6F6;
+    align-self: flex-start;
+}
+
+.input-item {
+    width: 100%;
+    border: none;
+    text-align: right;
+    background-color: #242424;
+}
