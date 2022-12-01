@@ -1,7 +1,7 @@
 {
   "name": "forex_calculator",
   "version": "0.1.0",
-  "homepage": "https://github.com/devirla/currency-calculator",
+  "homepage": "https://devirla.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
