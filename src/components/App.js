@@ -81,6 +81,15 @@ class App extends Component {
  select or input element is updated
   */
 
+ setButtonStatus = () => {
+    if (this.state.btnDisable == false) {
+      document.querySelector(".submitButton").classList.remove("disableBtn");
+    }
+    else {
+      document.querySelector(".submitButton").classList.add("disableBtn");
+    }
+ }
+
   onChange = (e) => {
     const newItems = this.state.items.map((item) => {
       if (item.inputName == e.target.id) {
@@ -103,19 +112,12 @@ class App extends Component {
       }
     });
 
-    if (this.state.btnDisable == false) {
-      document.querySelector(".submitButton").classList.remove("disableBtn");
-    }
-    else {
-      document.querySelector(".submitButton").classList.add("disableBtn");
-    }
-
     this.setState((prevState) => ({
       items: newItems,
       flagName: e.target.name,
       summary: false,
       btnDisable: false,
-    })
+    }), () => this.setButtonStatus()
     )
   }
   /*

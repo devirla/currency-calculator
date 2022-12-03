@@ -72,6 +72,7 @@ input:focus {
 .submitButton {
   background-color: #F1FF0A;
   border-radius: 20px;
+  border: none;
   display: inline-block;
   cursor: pointer;
   color: #000000;
