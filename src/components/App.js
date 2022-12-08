@@ -76,22 +76,21 @@ class App extends Component {
     }
   };
 
+  setButtonStatus = () => {
+    ( this.state.btnDisable 
+                            ? document.querySelector(".submitButton").classList.add("disableBtn")
+                            : document.querySelector(".submitButton").classList.remove("disableBtn")
+    )
+ }
+
   /* change value in select and input elements and update state.
  Change value of input element to 0 when in second item 
  select or input element is updated
   */
-
- setButtonStatus = () => {
-    if (this.state.btnDisable == false) {
-      document.querySelector(".submitButton").classList.remove("disableBtn");
-    }
-    else {
-      document.querySelector(".submitButton").classList.add("disableBtn");
-    }
- }
-
   onChange = (e) => {
     const newItems = this.state.items.map((item) => {
+      /* For maintenance of legibility there has been not used ternary conditional*/
+      
       if (item.inputName == e.target.id) {
         return {
           ...item,
@@ -127,34 +126,36 @@ class App extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
+    /* .mid -> average price of the currency */
     const askPrice = this.state.results.filter((item) => item.code == this.state.items[0].selectValue)[0].mid;
     const bidPrice = this.state.results.filter((item) => item.code == this.state.items[1].selectValue)[0].mid;
     let singleConversion = 0;
     let conversion = 0;
     let name = "";
 
-    if (this.state.items[0].inputValue != 0) {
-      singleConversion = askPrice / bidPrice;
-      conversion = (singleConversion * this.state.items[0].inputValue).toFixed(2);
-      name = "bidInput";
-    }
-    else if (this.state.items[1].inputValue != 0) {
-      singleConversion = bidPrice / askPrice;
-      conversion = (singleConversion * this.state.items[1].inputValue).toFixed(2);
-      name = "askInput";
-    }
+    singleConversion = ( this.state.items[0].inputValue !=0 ) 
+                                                            ? askPrice/bidPrice
+                                                            : bidPrice/askPrice ;
+    
+    conversion = ( this.state.items[0].inputValue !=0 ) 
+                                                        ? (singleConversion * this.state.items[0].inputValue).toFixed(2)
+                                                        : (singleConversion * this.state.items[1].inputValue).toFixed(2);
+
+    name = ( this.state.items[0].inputValue !=0 ) 
+                                                  ? "bidInput"
+                                                  : "askInput";
 
     const newItems = this.state.items.map((item) => {
-      if (item.inputName == name) {
-        return {
-          ...item,
-          inputValue: conversion
-        }
-      }
-      return {
-        ...item
-      }
-    });
+      
+    return  ( item.inputName == name ) 
+                                ? {
+                                  ...item,
+                                  inputValue: conversion
+                                }
+                                : {
+                                  ...item
+                                };
+                              });
 
     this.setState((prevState) => ({
       ...prevState,
@@ -175,14 +176,8 @@ class App extends Component {
     let choosenItem = -1;
     let resultItem = -1;
 
-    if (this.state.flagName == "ask") {
-      choosenItem = 0;
-      resultItem = 1;
-    }
-    else if (this.state.flagName == "bid") {
-      choosenItem = 1;
-      resultItem = 0;
-    }
+    choosenItem = this.state.flagName == "ask" ? 0 : 1 ;
+    resultItem = this.state.flagName == "ask" ? 1 : 0 ;
 
     return (
       <div className='resultBox'>
